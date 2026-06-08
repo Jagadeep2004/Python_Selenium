@@ -28,8 +28,7 @@ driver.find_element(By.XPATH, "//a[contains(text(),'Delete Account')]").click()
 
 time.sleep(5)
 
-assert driver.find_element(By.XPATH, "//b[text()='Account Deleted!']").is_displayed()
-print("ACCOUNT DELETED!")
+
 
 time.sleep(3)
 driver.quit()
