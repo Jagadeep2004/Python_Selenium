@@ -24,7 +24,7 @@ driver.find_element(By.XPATH, "//button[@data-qa='login-button']").click()
 #assert driver.find_element(By.XPATH, "//a[contains(text(),'Logged in as')]").is_displayed()
 print("Logged in successfully")
 
-driver.find_element(By.XPATH, "//a[contains(text(),'Delete Account')]").click()
+#driver.find_element(By.XPATH, "//a[contains(text(),'Delete Account')]").click()
 
 time.sleep(5)
 
