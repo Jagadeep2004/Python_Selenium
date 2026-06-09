@@ -9,12 +9,12 @@ def test_sample(browser, url):
 
     if browser == "chrome":
         options = ChromeOptions()
-        # options.add_argument("--headless=new")
+        options.add_argument("--headless=new")
         driver = wb.Chrome(options=options)
 
     else:
         options = EdgeOptions()
-        # options.add_argument("--headless=new")
+        options.add_argument("--headless=new")
         driver = wb.Edge(options=options)
 
     driver.get(url)
