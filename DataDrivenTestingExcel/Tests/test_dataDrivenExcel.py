@@ -26,7 +26,7 @@ class TestLogin1:
 
         self.driver.get("https://www.demoblaze.com/index.html")
 
-        wait = WebDriverWait(self.driver, 10)
+        wait = WebDriverWait(self.driver, 20)
 
         logger.info("Clicking Login Link")
 
