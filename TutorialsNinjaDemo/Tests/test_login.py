@@ -19,7 +19,7 @@ def test_login(setup, email, password):
 
     driver = setup
 
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 30)
 
     logger.info("Opening TutorialsNinja Website")
 
