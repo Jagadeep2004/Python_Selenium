@@ -25,7 +25,7 @@ def test_login(setup, email, password):
 
     driver.get(config.get("common info", "baseURL"))
 
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'My Account')]"))).click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='top-links']//span[contains(text(),'My Account')]"))).click()
 
     wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
 

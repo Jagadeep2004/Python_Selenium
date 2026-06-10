@@ -12,19 +12,22 @@ def test_setup_and_teardown():
     yield
     driver.quit()
 
+@pytest.mark.order(3)
 def test_validProduct(test_setup_and_teardown):
-    driver.find_element(By.XPATH,'//*[@id="search"]/input').send_keys("HP")
-    driver.find_element(By.XPATH,'//*[@id="search"]/span/button').click()
+    driver.find_element(By.XPATH, '//*[@id="search"]/input').send_keys("HP")
+    driver.find_element(By.XPATH, '//*[@id="search"]/span/button').click()
     assert driver.find_element(By.XPATH,'//h2[text()="Products meeting the search criteria"]').is_displayed()
     print("Product found")
 
+@pytest.mark.order(2)
 def test_invalidProduct(test_setup_and_teardown):
-    driver.find_element(By.XPATH,'//*[@id="search"]/input').send_keys("hdfg")
-    driver.find_element(By.XPATH,'//*[@id="search"]/span/button').click()
-    assert driver.find_element(By.XPATH,'//*[@id="content"]/p[2]').is_displayed()
+    driver.find_element(By.XPATH, '//*[@id="search"]/input').send_keys("hdfg")
+    driver.find_element(By.XPATH, '//*[@id="search"]/span/button').click()
+    assert driver.find_element(By.XPATH, '//*[@id="content"]/p[2]').is_displayed()
     print("Product not found")
 
+@pytest.mark.order(1)
 def test_noProduct(test_setup_and_teardown):
-    driver.find_element(By.XPATH,'//*[@id="search"]/span/button').click()
+    driver.find_element(By.XPATH, '//*[@id="search"]/span/button').click()
     assert driver.find_element(By.XPATH,'//*[@id="input-search"]').get_attribute("value") == ""
     print("No product entered")
