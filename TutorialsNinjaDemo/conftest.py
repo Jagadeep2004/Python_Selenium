@@ -19,6 +19,8 @@ def setup():
     else:
         driver = webdriver.Firefox()
 
+    driver.get(config.get("common info", "baseURL"))
+
     driver.maximize_window()
 
     yield driver
