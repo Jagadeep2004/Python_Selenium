@@ -29,7 +29,7 @@ def test_login(setup, email, password):
     print("Current URL:", driver.current_url)
     print("Title:", driver.title)
 
-    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='top-links']//span[contains(text(),'My Account')]"))).click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id="top-links"]/ul/li[2]/a/i"))).click()
 
     wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
 
